@@ -7,8 +7,7 @@ setGroups('flowgraph', {
 var links = {};
 var agingtime = 600000;
 
-setIntervalHandler(function() {
-  var now = (new Date()).getTime();
+setIntervalHandler(function(now) {
   for (var link in links) {
     var info = links[link];
     if(now - info.time > agingtime) {
