@@ -66,28 +66,26 @@ $(function() {
      }); 
   };
 
-  $(document).ready(function() {
-    nodes = new vis.DataSet([]);
-    edges = new vis.DataSet([]);
+  nodes = new vis.DataSet([]);
+  edges = new vis.DataSet([]);
 
-    var container = document.getElementById('mynetwork');
+  var container = document.getElementById('mynetwork');
 
-    var data = {
-        nodes: nodes,
-        edges: edges
-    };
-    var options = {
-      physics:{
-        solver:'repulsion'
-      },
-      groups: {
-        external: {color:{background:'#FF6666'}},
-        private: {color:{background:'#33CC33'}},
-        multicast: {color:{background:'#FFFF00'}}
-      }
-    };
-    network = new vis.Network(container, data, options);
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+    physics:{
+      solver:'repulsion'
+    },
+    groups: {
+      external: {color:{background:'#FF6666'}},
+      private: {color:{background:'#33CC33'}},
+      multicast: {color:{background:'#FFFF00'}}
+    }
+  };
+  network = new vis.Network(container, data, options);
 
-    pollLinks();
-  });
+  pollLinks();
 });
